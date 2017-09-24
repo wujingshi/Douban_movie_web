@@ -18,3 +18,8 @@
         <button class="next" ng-click="getPage(pageIndex+1)" ng-class="{disable:pageIndex==pageCount}">下一页</button>
     </div>
 </div>
+<div class="spinner" ng-init="isShow=true" ng-show="isShow">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>

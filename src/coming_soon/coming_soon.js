@@ -25,6 +25,8 @@
             callback:function(data){
                 $scope.movie=data;
                 $scope.pageCount=$window.Math.ceil(data.total/$scope.pageSize);
+                //º”‘ÿ∂Øª≠
+                $scope.isShow=false;
                 $scope.$apply();
             }
         });
