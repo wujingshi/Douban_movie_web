@@ -2,22 +2,22 @@
  * Created by wujingshi on 2017/9/24.
  */
 (function(angular){
-    var app=angular.module("douban_theaters",["ngRoute","common"]);
+    var app=angular.module("douban_top250",["ngRoute","common"]);
     app.config(["$routeProvider",function($routeProvider){
-        $routeProvider.when("/in_theaters/:page?",{
-            templateUrl:"./in_theaters/in_theaters.html",
-            controller:"theatersMenuCon"
+        $routeProvider.when("/top250/:page?",{
+            templateUrl:"./top250/top250.html",
+            controller:"top250MenuCon"
         })
     }]);
 
-    app.controller("theatersMenuCon",["$scope","$route","serjsonp","$routeParams","$window",function($scope,$route,serjsonp,$routeParams,$window){
-    //定义每一页的容量
+    app.controller("top250MenuCon",["$scope","$route","serjsonp","$routeParams","$window",function($scope,$route,serjsonp,$routeParams,$window){
+        //定义每一页的容量
         $scope.pageSize=10;
-    //定义页码
+        //定义页码
         $scope.pageIndex=+($routeParams.page||"1");
-    //调取数据
+        //调取数据
         serjsonp({
-            url:"http://api.douban.com/v2/movie/in_theaters",
+            url:"http://api.douban.com/v2/movie/top250",
             params:{
                 count:$scope.pageSize,
                 start:($scope.pageIndex-1)*$scope.pageSize
